@@ -1,0 +1,124 @@
+ 
+#nav-item li {
+    list-style: none; 
+    padding: 0 20px;
+    position: relative;
+}
+#nav-item li a {
+    font-weight: 400;
+    color: black;
+}
+#nav-item li a:hover{
+    color: #254336;
+    transition: 0.3s;
+}
+/* #nav-item li a:hover::after{
+    content: '';
+    width: 30%;
+    height: 2px;
+    background:  #254336;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+} */
+
+.loader {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    color: #0c17af;
+  }
+    .loader:before,
+    .loader:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      border-radius: 50%;
+      transform: rotateX(70deg);
+      animation: 1s spin linear infinite;
+    }
+    .loader:after {
+      color: #FF3D00;
+      transform: rotateY(70deg);
+      animation-delay: .4s;
+    }
+
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+  }
+
+  @keyframes rotateccw {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
+
+  @keyframes spin {
+    0%,
+    100% {
+      box-shadow: .2em 0px 0 0px currentcolor;
+    }
+    12% {
+      box-shadow: .2em .2em 0 0 currentcolor;
+    }
+    25% {
+      box-shadow: 0 .2em 0 0px currentcolor;
+    }
+    37% {
+      box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+    50% {
+      box-shadow: -.2em 0 0 0 currentcolor;
+    }
+    62% {
+      box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+    75% {
+      box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+    87% {
+      box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+  }
+
+
+
+
+@media (max-width:680px) {
+    #nav-item{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px; 
+        height: 100vh;
+        width: 300px;
+        background-color: #f3fafa;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.2);
+        padding: 80px 0 0 10px;
+        transition: 0.4s;
+        z-index: 50;
+    }
+    #nav-item.active{
+        right: 0px;
+     } 
+    #nav-item li{
+        margin-bottom: 15px;
+    }
+}
